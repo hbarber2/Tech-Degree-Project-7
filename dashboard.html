@@ -1,0 +1,304 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Dashboard App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+		<link href="css/normalize.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/css-toggle-switch@latest/dist/toggle-switch.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.css" integrity="sha512-C7hOmCgGzihKXzyPU/z4nv97W0d9bv4ALuuEbSf6hm93myico9qa0hv4dODThvCsqQUmKmLcJmlpRmCaApr83g==" crossorigin="anonymous" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+  </head>
+  <body class="grid-container">
+
+		<header>
+			<h1>YourApp</h1>
+				<div class="profile-info">
+					<div class="bell-icon">
+						<svg class="bell" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+							<style type="text/css">
+								.st0{fill:#FFFFFF;}
+							</style>
+						<g id="_x36__6_">
+							<g class="bell">
+							<path class="st0" d="M24,18v-8c0-5.5-4.5-10-10-10S4,4.5,4,10v8l-4,8h9.1c0.5,2.3,2.5,4,4.9,4s4.4-1.7,4.9-4H28L24,18z M14,28
+					c-1.3,0-2.4-0.8-2.8-2h5.6C16.4,27.2,15.3,28,14,28z M3,24l3-6v-8c0-4.4,3.6-8,8-8s8,3.6,8,8v8l3,6H3z"/>
+							</g>
+						</g>
+					</svg>
+					<div id="notifications">
+						<img src="icons/notification.svg">
+					</div>
+					</div>
+	
+					<img src="images/member-1.jpg" alt="Profile image">
+					<h3>Hannah Barber</h3>
+				</div>
+		</header>
+		
+		
+		<nav class="sidebar">
+				<a href="#dashoboard"><img class="icon grid-item" id="dashboard-icon" src="icons/icon-dashboard.svg" alt="Dashboard icon"></a>
+				<a href="#members"><img class="icon grid-item" id="members-icon" src="icons/icon-members.svg" alt="Members icon"></a>
+				<a href="#visits"><img class="icon grid-item" id="visits-icon" src="icons/icon-visits.svg" alt="Visits icon"></a>
+				<a href="#settings"><img class="icon grid-item" id="settings-icon" src="icons/icon-settings.svg" alt="Settings"></a>
+		</nav>
+		
+		<main class="main-grid">
+			
+
+		<div class="second-row">
+			<h2 class="top-tab">Dashboard</h2>
+			<div class="search-bar">
+				<input type="search" id="search" placeholder="Search">
+			</div>
+		</div>
+			
+		<div id="alert" class="alert">
+		</div>
+			
+
+			
+
+			<section id="traffic" class="traffic">
+				<h3>Traffic</h3>
+				<ul class="traffic-nav">
+					<li class="traffic-nav-item">Hourly</li>
+					<li class="traffic-nav-item">Daily</li>
+					<li class="traffic-nav-item">Weekly</li>
+					<li class="traffic-nav-item">Monthly</li>
+				</ul>
+				<div class="full-width-container">
+					<canvas id="traffic-chart"></canvas>
+				</div>
+			</section>
+		
+			
+			<section class="daily-traffic">
+				<h3>Daily Traffic</h3>
+				<div class="half-width-container">
+					<canvas  id="daily-chart"></canvas>
+				</div>
+			</section>
+
+			<section class="mobile-users">
+				<h3>Mobile Users</h3>
+				<div class="half-width-container">
+					<canvas  id="mobile-chart"></canvas>
+				</div>
+			</section>
+
+			<section class="social-stats">
+				<h3>Social Media Statistics</h3>
+				<div class="twitter-card">
+					<div class="social-image">
+						<svg class="twitter" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+							<path fill="rgb(29 161 242)" d="M32,3.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6C25.8,0.8,24,0,22.2,0
+							c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5C10.3,7.8,5.5,5.2,2.2,1.2c-0.6,1-0.9,2.1-0.9,3.3c0,2.3,1.2,4.3,2.9,5.5
+							c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1
+							c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,3,10.1,3c12.1,0,18.7-10,18.7-18.7
+							c0-0.3,0-0.6,0-0.8C30,5.6,31.1,4.4,32,3.1z"/>
+						</svg>
+						</div>
+							<div class="social-text">
+								<p>Twitter</p>
+								<p class="stat">10,360</p>
+							</div>
+				</div>
+				
+				
+				<div class="facebook-card">
+					<div class="social-image">
+							<svg class="facebook" enable-background="new 0 0 56.693 56.693" height="56.693px" id="Layer_1" version="1.1" viewBox="0 0 56.693 56.693" width="56.693px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+									<path fill="#4267B2" d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"/>
+							</svg>
+							</div>
+							<div class="social-text">
+								<p>Facebook</p>
+								<p class="stat">28,703</p>
+							</div>
+				</div>
+	
+				
+				<div class="google-card">
+					<div class="social-image">
+						<svg class="google" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+						<path fill="#4285F4" d="M17.7,25.7c0-0.3,0-0.5-0.1-0.8c-0.1-0.2-0.1-0.5-0.2-0.7c-0.1-0.2-0.2-0.4-0.3-0.7c-0.2-0.2-0.3-0.4-0.4-0.6
+							c-0.1-0.2-0.3-0.3-0.5-0.6c-0.2-0.2-0.4-0.4-0.5-0.5c-0.1-0.1-0.3-0.3-0.6-0.5c-0.3-0.2-0.5-0.4-0.6-0.4s-0.3-0.2-0.6-0.4
+							c-0.3-0.2-0.5-0.4-0.6-0.4c-0.2,0-0.5,0-1,0c-0.7,0-1.4,0-2,0.1c-0.7,0.1-1.4,0.2-2.1,0.5c-0.7,0.2-1.3,0.5-1.9,0.9s-1,0.8-1.3,1.4
+							c-0.3,0.6-0.5,1.3-0.5,2.1c0,0.9,0.2,1.7,0.7,2.3c0.5,0.7,1.1,1.2,1.8,1.6s1.5,0.7,2.3,0.9s1.6,0.3,2.4,0.3c0.8,0,1.5-0.1,2.2-0.2
+							c0.7-0.2,1.3-0.4,1.9-0.8c0.6-0.3,1.1-0.8,1.4-1.4C17.5,27.2,17.7,26.5,17.7,25.7z M15.4,9.1c0-0.8-0.1-1.6-0.3-2.5
+							c-0.2-0.9-0.5-1.7-0.9-2.5c-0.4-0.8-0.9-1.5-1.6-2c-0.7-0.5-1.5-0.8-2.3-0.8c-1.2,0-2.1,0.4-2.8,1.3c-0.7,0.9-1,1.9-1,3.2
+							c0,0.6,0.1,1.2,0.2,1.9c0.1,0.7,0.4,1.3,0.7,2c0.3,0.7,0.7,1.3,1.1,1.8c0.4,0.5,0.9,1,1.5,1.3c0.6,0.3,1.2,0.5,1.9,0.5
+							c1.2,0,2.1-0.4,2.7-1.2C15.1,11.4,15.4,10.4,15.4,9.1z M12.9,0h8.4l-2.6,1.5h-2.6c0.9,0.6,1.6,1.4,2.1,2.4s0.8,2.1,0.8,3.2
+							c0,0.9-0.1,1.8-0.4,2.5c-0.3,0.7-0.7,1.3-1.1,1.8c-0.4,0.4-0.8,0.9-1.3,1.2c-0.4,0.4-0.8,0.8-1.1,1.2c-0.3,0.4-0.4,0.8-0.4,1.3
+							c0,0.3,0.1,0.7,0.3,1c0.2,0.3,0.5,0.6,0.8,0.9c0.3,0.3,0.7,0.6,1.1,0.9c0.4,0.3,0.8,0.7,1.2,1.1c0.4,0.4,0.8,0.8,1.1,1.3
+							c0.3,0.5,0.6,1,0.8,1.6c0.2,0.6,0.3,1.3,0.3,2c0,2.1-0.9,3.9-2.7,5.4c-1.9,1.7-4.6,2.5-8.1,2.5c-0.8,0-1.5-0.1-2.3-0.2
+							c-0.8-0.1-1.6-0.3-2.3-0.6c-0.8-0.3-1.5-0.7-2.1-1.1c-0.6-0.4-1.1-1-1.5-1.7C1,27.6,0.8,26.9,0.8,26c0-0.8,0.2-1.6,0.7-2.6
+							c0.4-0.8,1-1.5,1.8-2.1c0.8-0.6,1.8-1.1,2.8-1.4c1-0.3,2-0.5,3-0.7c0.9-0.1,1.9-0.2,2.9-0.3c-0.8-1.1-1.2-2-1.2-2.9
+							c0-0.2,0-0.3,0-0.5c0-0.1,0.1-0.3,0.1-0.4c0-0.1,0.1-0.2,0.2-0.4c0.1-0.2,0.1-0.3,0.1-0.4c-0.5,0.1-1,0.1-1.3,0.1
+							c-1.9,0-3.5-0.6-4.9-1.9c-1.4-1.3-2-2.8-2-4.7c0-1.8,0.6-3.4,1.8-4.8C6,1.7,7.5,0.8,9.3,0.4C10.5,0.1,11.7,0,12.9,0z M32.8,4.9v2.5
+							h-4.9v4.9h-2.5V7.4h-4.9V4.9h4.9V0h2.5v4.9H32.8z"/>
+						</svg>
+					</div>
+					<div class="social-text">
+							<p>Google Plus</p>
+							<p class="stat">157</p>
+					</div>
+						
+				</div>
+			</section>
+			
+			
+			<section id="members" class="new-members">
+				<h3>New Members</h3>
+					<div class="new-member-container">
+						<img src="images/member-1.jpg" alt="New member profile image" class="member-image">
+						<div class="member-text">
+							<p>Maya Klotz</p>
+							<a href="#">mayaklotz@mayaklotz.com</a>
+						</div>
+						<p class="date">09.20.2020</p>
+					</div>
+					<div class="new-member-container">
+						<img src="images/member-2.jpg" alt="New member profile image" class="member-image">
+						<div class="member-text">
+							<p >Ruby Case</p>
+							<a href="#">rubycase@rubycase.com</a>
+						</div>
+						<p class="date">08.07.2020</p>
+				</div>
+				<div class="new-member-container">
+						<img src="images/member-3.jpg" alt="New member profile image" class="member-image">
+						<div class="member-text">
+							<p>Adele Collins</p>
+							<a href="#">adelecollins@adelecollins.com</a>
+						</div>
+						<p class="date">05.16.2020</p>
+				</div>
+				<div class="new-member-container">
+						<img src="images/member-4.jpg" alt="New member profile image" class="member-image">
+						<div class="member-text">
+							<p>Daisy English-Stewart</p>
+							<a href="#">daisystewart@daisystewart.com</a>
+						</div>
+						<p class="date">03.10.2020</p>
+				</div>
+			</section>
+
+			<section class="recent-activity">
+				<h3>Recent Activity</h3>
+					<div class="member-container">
+						<img src="images/member-1.jpg" alt="New member profile image" class="member-image">
+						<div class="member-text">
+							<p>Maya liked a Tweet</p>
+							<p>5 hours ago</p>
+						</div>
+						<p class="arrow">></p>
+					</div>
+					<div class="member-container">
+						<img src="images/member-2.jpg" alt="New member profile image" class="member-image">
+						<div class="member-text">
+							<p>Ruby liked YourApp's Facebok page</p>
+							<p>10 hours ago</p>
+						</div>
+						<p class="arrow">></p>
+				</div>
+				<div class="member-container">
+						<img src="images/member-3.jpg" alt="New member profile image" class="member-image">
+						<div class="member-text">
+							<p>Adele like a Tweet</p>
+							<p>1 day ago</p>
+						</div>
+						<p class="arrow">></p>
+				</div>
+				<div class="member-container">
+						<img src="images/member-4.jpg" alt="New member profile image" class="member-image">
+						<div class="member-text">
+							<p>Daisy left a Google review</p>
+							<p>5 days ago</p>
+						</div>
+						<p class="arrow">></p>
+				</div>
+			</section>
+
+			<section class="message-user">
+				<h3>Message User</h3>
+				<form class="widget-container">
+					<input type="text" id="search-for-user" placeholder="Search for User">
+					<textarea id="message-for-user" placeholder="Message for User"></textarea>
+					<button id="primary-button">Send</button>
+				</form>
+			</section>
+
+			<section id="settings" class="settings">
+				<h3>Settings</h3>
+				
+				<label class="switch-light switch-material">
+					<input type="checkbox">
+
+					<strong class="large-4 columns">
+						Send email notifications
+					</strong>
+					<span class="large-4 columns float-left">
+						<span>Off</span>
+						<span>On</span>
+						<a></a>
+					</span>
+				</label>
+				
+				<label class="switch-light switch-material">
+					<input type="checkbox">
+
+					<strong class="large-4 columns">
+						Set profile to public
+					</strong>
+					<span class="large-4 columns float-left">
+						<span>Off</span>
+						<span>On</span>
+						<a></a>
+					</span>
+				</label>
+				<div class="select-menu">
+					<select>
+						<option>Select Timezone</option>
+						<option>EST</option>
+						<option>CST</option>
+						<option>MST</option>
+						<option>PST</option>
+						<option>AST</option>
+						<option>HST</option>
+					</select>
+				</div>
+				<button class="save-button">Save</button>
+				<button class="cancel-button">Cancel</button>
+			</section>
+		</main>
+
+		<script src="js/dashboard.js"></script>
+
+	</body>
+	</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
