@@ -58,6 +58,12 @@ h1 {
 	position: relative;
 }
 
+.bell:hover {
+	transform: scale(1.1);
+	transition-duration: .5s;
+}
+
+
 #notifications img {
 	position: absolute;
 	top:	35px;
@@ -168,10 +174,8 @@ section {
 .google,
 .twitter {
 	background-color: #6d6190;
-
-	border-radius: 50%;
-	fill: white;
-	
+	border-radius: 25%;
+	padding: 10px;
 }
 
 path {
@@ -205,8 +209,9 @@ svg {
 
 .social-image {
 	display: inline-block;
+	padding-left: 15px;
+	padding-top:15px;
 }
-
 
 
 /* New Members and Recent Activity*/
@@ -252,7 +257,6 @@ svg {
 	font-size: .75em;
 }
 
-
 .date,
 .arrow {
 	display: flex;
@@ -279,6 +283,11 @@ textarea,
 	display: block;
 }
 
+#search-for-user,
+textarea {
+	border: .5px solid #ccc;
+}
+
 textarea {
 	height: 100px;
 }
@@ -300,7 +309,6 @@ textarea {
 	border: 1px solid transparent;
 	user-select: none;
 	cursor: pointer;
-	border-color: transparent transparentrgba (0, 0, 0, 0.1) transparent;
 }
 
 .select-menu {
@@ -316,7 +324,6 @@ textarea {
 .cancel-button {
 	display: inline-block;
 	width: 49%;
-	
 }
 
 
@@ -342,97 +349,96 @@ header{
 		max-width: 95vw
 	}
 	
-	
-
 	.grid-container {
 		display: grid;
 		grid-template-columns: 80px 1fr;
 		grid-template-rows: auto;
 		}
 
-		.main-grid{
+	.main-grid{
 		grid-template-columns: 1fr;
 	}
 
 
-		.half-width-container {
-			width: 45vw;
+	.half-width-container {
+		width: 45vw;
 		}
-			.full-width-container {
-			width: 90vw;
-		}
-
-		nav {
-			grid-column-start: 1;
-			grid-column-end: 2;
+	
+	.full-width-container {
+		width: 90vw;
 		}
 
-		header {
-			grid-column-start: 1;
+	nav {
+		grid-column-start: 1;
+		grid-column-end: 2;
+	}
+
+	header {
+		grid-column-start: 1;
+		grid-column-end: 4;
+		}
+
+
+	.daily-traffic,
+	.new-members,
+	.message-user {
+			grid-column-start: 2;
+			grid-column-end: 3;
+		}
+
+	.traffic,
+	.social-stats,
+	main,
+	.alert,
+	.second-row{
+			grid-column-start: 2;
 			grid-column-end: 4;
 		}
 
-
-		.daily-traffic,
-		.new-members,
-		.message-user {
-				grid-column-start: 2;
-				grid-column-end: 3;
-			}
-
-		.traffic,
-		.social-stats,
-		main,
-		.alert,
-		.second-row{
-				grid-column-start: 2;
-				grid-column-end: 4;
-			}
-
-		.mobile-users,
-		.recent-activity,
-		.settings {
-				grid-column-start: 3;
-				grid-column-end: 4;
-			}
-		.half-width-container {
-				width: 45vw;
+	.mobile-users,
+	.recent-activity,
+	.settings {
+			grid-column-start: 3;
+			grid-column-end: 4;
 		}
-
-		.full-widget-container {
-				width: 90vw;
+	.half-width-container {
+			width: 45vw;
 	}
-	
+
+	.full-widget-container {
+			width: 90vw;
+}
+
 /* Header */
 	
 	h1 {
-	display: inline-block;
-	margin-top: 0;
-	margin-bottom: 0;
-	padding: 0;
-	float: left;
-	clear: right;
-}
+		display: inline-block;
+		margin-top: 0;
+		margin-bottom: 0;
+		padding: 0;
+		float: left;
+		clear: right;
+	}
 
-.profile-info {
-	padding-top: 30px;
-	display: flex;
-	justify-content: flex-end;
-}
+	.profile-info {
+		padding-top: 30px;
+		display: flex;
+		justify-content: flex-end;
+	}
 
-.bell {
-	height: 25px;
-	padding-right: 25px;
-}
+	.bell {
+		height: 25px;
+		padding-right: 25px;
+	}
 
-.profile-info img {
-	height: 25px;
-	padding-right: 10px;
-}
+	.profile-info img {
+		height: 25px;
+		padding-right: 10px;
+	}
 
-.profile-info h3 {
-	margin: 0;
-}
+	.profile-info h3 {
+		margin: 0;
+	}
 
 /* Naviation */
 	
@@ -443,27 +449,23 @@ header{
 		justify-content: flex-start;
 	}
 	
-		.icon {
-			padding-top: 10px;
-			padding-bottom: 10px;
-			padding-left: 10px;
-			border: 5px solid transparent;
-			height: 60px;
-			
-		}
+	.icon {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 10px;
+		border: 5px solid transparent;
+		height: 60px;
+	}
 
-		.icon:hover {
-			border-left: 5px solid green
-		}
+	.icon:hover {
+		border-left: 5px solid green
+	}
 	
-	/* Alert */
+/* Alert */
 	
-
-
 	.alert-banner {
 		display: grid;
 		grid-template-columns: 1fr 30px;
-
 	}
 	
 	.alert-text {
@@ -488,11 +490,10 @@ header{
 		padding-top: 20px;
 		padding-left: 50px;
 		width: 50%;
-		
 	}
 	
 	#search {
-		display:block;
+		display: block;
 		float: right;
 		padding-right: 25px;
 	}
@@ -534,6 +535,15 @@ header{
 		margin: 0 2em;;
 	}
 
+	.second-row {
+		max-width: 90vw;
+	}
+	
+	.daily-traffic,
+	.mobile-users {
+		max-width: 45vw;
+		padding-left: 0;
+	}
 
 }
 	
