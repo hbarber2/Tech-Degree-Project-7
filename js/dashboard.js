@@ -14,6 +14,7 @@ const send = document.getElementById('primary-button');
 //////////////Alert Bar////////////////
 */
 
+
 alertBanner.innerHTML =
 	`
 	<div class="alert-banner">
